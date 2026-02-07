@@ -1,122 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+Mono">
-    <title>Home</title>
-     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0V246DP3X9"></script>
-     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>man(1) developer-profile</title>
+    <style>
+        :root {
+            /* Standard terminal colors: adjustable */
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --link-color: #000000;
+        }
 
-        gtag('config', 'G-0V246DP3X9');
-    </script>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1a1a1a;
+                --text-color: #e5e5e5;
+                --link-color: #ffffff;
+            }
+        }
+
+        body {
+            font-family: "Courier New", Courier, monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.4;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            /* Center the page on large screens for readability */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Man page header style */
+        header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        /* Definition lists for the indented layout */
+        dl {
+            margin: 0;
+        }
+
+        dt {
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        dd {
+            margin-left: 4ch; /* Standard man page indentation */
+            margin-bottom: 1rem;
+        }
+
+        /* Plain text links */
+        a {
+            color: var(--link-color);
+            text-decoration: underline;
+        }
+        
+        a:hover {
+            text-decoration: none;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        /* Lists within sections */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        ul li::before {
+            content: "- ";
+        }
+
+        /* Footer navigation mimicry */
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid var(--text-color);
+            padding-top: 10px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+                font-size: 14px;
+            }
+            
+            dd {
+                margin-left: 2ch; /* Reduce indentation on small screens */
+            }
+
+            header {
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div id="global">
 
-        <div id="intro-header">
-            <div id="profile-pic">
-                <img src="images/0.jpeg" id="profile-img" alt="profile">
-                <h1 id="greeting-text">Hi! 👋 <br> I am Dan</h1>
-            </div>
-            <h2 style="text-align: center">A passionate CS student <br> and aviation lover</h2>
-            
-            <div id="contacts">
-                <p>You can find me on the internet under the nickname JungleTryne 
-                <a class="ipa">/ʤʌŋɡᵊltrʌɪn/</a>. Feel free to reach out via </p>
+    <header>
+        <span>PROFILE(1)</span>
+        <span>Personal Page</span>
+        <span>PROFILE(1)</span>
+    </header>
 
-                <ul>
-                    <li> Telegram: @jungletryne </li>
-                    <li> Discord: JungleTryne </li>
-                    <li> E-Mail: dkmishin@gmail.com </li>
-                </ul>
-        
-                <p>  On this page I will write a little about myself :)</p>
-            </div>
-        </div>
-
-        <div id="main-text">
-            <div class="info-card">
-                <div class="card-text">
-                    <h2> 1. Programming </h2>
-                    <p>I have been programming since middle school. My first CS project was about creating a robot car entirely from scratch. This has driven my passion since then, and now I speak with computers for a living.
-                    </p>
-            
-                    <p>
-                        I love all the aspects of programming and IT. I tried backend, frontend, mobile dev, machine learning, and embedded dev, but my favorite is creating large-scale, blazingly fast (🚀🚀🚀) high-performance systems. Concurrency, Infra, Security, Distributed Systems - all these topics are challenging yet engaging! Nobody thinks about them when using one popular website or another, but they are part of the core, without which nothing like this would even be possible. It’s so interesting to know how <a href="https://discord.com/blog/how-discord-stores-trillions-of-messages">Discord handles trillions of messages</a>, how <a href="https://habr.com/ru/companies/yandex/articles/577040/">Yandex handled one of the biggest DDoS attacks in the history</a>, and so on. 
-                    </p>
-            
-                    <p>
-                        You can find my projects on my <a href="https://github.com/JungleTryne">Github page</a>.
-                    </p>
-                </div>
-                <div class="figure-container">
-                    <img src="images/1.png" class="card-image">
-                    <p> Fig. 1: Just a random pic <br>
-                        of a distributed system </p>
-                </div>
-                
-            </div>
-        
-            <div class="info-card">
-                <div class="card-text">
-                    <h2> 2. Aviation </h2>
-                    <p>I didn’t really want to become a programmer in the first place. My dream was to become a commercial pilot! Aviation is such an exciting topic, too; it could even compete with programming, haha. There are so many procedures to follow, checklists to go through, systems to work with, and clouds to stare at during the flight.
-                    </p>
-            
-                    <p>
-                        Unfortunately, it’s unlikely that I will become a commercial pilot for many reasons, including not having ideal health. But nothing stops me from getting a Private Pilot License! This is one of my life goals, to become a private pilot :)
-                    </p>
-            
-                    <p>
-                        For now, I just fly in flight sims, using high-realistic DLCs and plugins. Graphics and realism have taken <a href="https://www.youtube.com/watch?v=ReDDgFfWlS4">a big step forward</a> recently.
-                    </p>
-                </div>
-                <div class="figure-container">
-                    <img src="images/2.png" class="card-image">
-                    <p> Fig. 2: Just a random flight route </p>
-                </div>
-                
-            </div>
-        
-            <div class="info-card">
-                <div class="card-text">
-                    <h2> 3. Linguistics </h2>
-                    <p>Once I reached some level of fluency in English, I realized that a language is a key to another cultural world, where you can meet new people, find new ideas, get new solutions, and discover new prospects. That’s why I decided to continue the journey and learn new languages after finishing my English courses at the uni.
-                    </p>
-            
-                    <p>
-                        I took a yearly German course and it was *fantastisch*! Although I reached only A1+ in German, I am pretty satisfied with the progress. Now, I am taking French courses and use the language daily in Lausanne. Learning a new language gives me so many opportunities that I probably wouldn’t be able to accomplish all of this (including writing this page) if I didn’t know English. Imagine how much I can do once I learn French or German!
-                    </p>
-            
-                    <p>
-                        But despite the practicality standpoint, learning a new language is just a game for me, a detective one - you have an unknown cipher, and you have to decode it :). It’s fun, and that’s why I do it.
-                    </p>
-                </div>
-                <div class="figure-container">
-                    <img src="images/3.png" class="card-image">
-                    <p> Fig. 3: Just a random phrase in different <br>
-                        languages </p>
-                </div>
-                
-            </div>
-        </div>
-
-        <div id="footer">
-            <p>And that’s only a tiny portion of my hobbies and what I do for a living. Maybe I will add more articles to this page in the future. I am also planning to start a technical blog. One day, I will have some ideas and knowledge to share with the world. Stay in touch!</p>
-        </div>
-
+    <h2>NAME</h2>
+    <div style="margin-left: 4ch;">
+        Danila Mishin
     </div>
 
-    <div id="signature">
-        <p>Mishin, et al</p>
-        <p>My personal blog</p>
-        <p>[Page 1]</p>
+    <h2>SYNOPSIS</h2>
+    <div style="margin-left: 4ch;">
+        <strong>Current Role:</strong> Research @ PARSA Lab, École Polytechnique Fédérale de Lausanne<br>
+        <strong>Location:</strong> Lausanne, Switzerland<br>
+        <strong>Areas of Interest:</strong> High-Performance Systems, Scalable Systems, Efficient Machine Learning
     </div>
 
-    
+    <h2>DESCRIPTION</h2>
+    <div style="margin-left: 4ch;">
+        <p>
+            <strong>Danila Mishin</strong> is a Master Student at EPFL and a Researcher at PARSA Lab, working on high-efficiency inference and training algorithms for Large Language Models.
+        </p>
+        <p>
+            He currently leads several research projects in collaboration with Google, AMD, and Korea University. Previously employed at major tech firms (FAANG), he optimized core infrastructure reliability and functionality at scale.
+        </p>
+    </div>
+
+    <h2>PUBLICATIONS</h2>
+    <div style="margin-left: 4ch;">
+        <p>
+            <strong>Effective Interplay between Sparsity and Quantization: From Theory to Practice</strong>
+            <br>
+            <em>Spotlight at ICLR 2025</em>
+            <br>
+            Simla Burcu Harma, Ayan Chakraborty, Elizaveta Kostenok, <strong>Danila Mishin</strong>, et al.
+            <br>
+            <a href="https://arxiv.org/abs/2405.20935">arXiv:2405.20935</a>
+        </p>
+        <ul>
+            <li>Formulated a unified mathematical framework to analyze the joint impact of sparsity and quantization, demonstrating their non-orthogonal nature in model compression.</li>
+        </ul>
+    </div>
+
+    <h2>SKILLS</h2>
+    <div style="margin-left: 4ch;">
+            <strong>Languages</strong>: C++, Python, C, Rust<br>
+            <strong>Tools</strong>: Git, Docker, Linux
+    </div>
+
+    <h2>EDUCATION</h2>
+    <div style="margin-left: 4ch;">
+        <p>
+            <strong>M.S. Computer Science</strong> (2023-2026)
+            <br>
+            École Polytechnique Fédérale de Lausanne (EPFL)
+        </p>
+        <p>
+            <strong>B.S. Applied Mathematics and Computer Science</strong> (2019-2023)
+            <br>
+            Moscow Institute of Physics and Technology (MIPT)
+        </p>
+    </div>
+
+    <h2>CONTACT</h2>
+    <div style="margin-left: 4ch;">
+        <ul>
+            <li>Email: <a href="mailto:dkmishin@gmail.com">dkmishin at gmail dot com</a></li>
+            <li>GitHub: <a href="https://github.com/jungletryne">github.com/jungletryne</a></li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/danmishin">linkedin.com/in/danmishin</a></li>
+        </ul>
+    </div>
+
+    <footer>
+        Personal Page &nbsp;&nbsp;&nbsp;&nbsp; Last change: FEBRUARY 2026 &nbsp;&nbsp;&nbsp;&nbsp; 1
+    </footer>
+
 </body>
 </html>
